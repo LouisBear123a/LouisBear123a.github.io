@@ -50,10 +50,6 @@
         padding-top: 15px; 
       }
       
-      .title p {
-        padding-bottom: 15px;
-      }
-      
       .title .fa {
         padding: 20px;
         font-size: 20px;
@@ -62,22 +58,26 @@
         text-decoration: none;
         margin: 5px 2px;
         border-radius: 30%;
+          -webkit-transition: width 0.5s, height: 0.5s; /* For Safari 3.1 to 6.0 */
+  transition: width 0.5s, height 0.5s;
       }
 
       .title .fa:hover {
           opacity: 0.7;
+        
       }
       
       .title .fa-google {
         background: #dd4b39;
         color: white;
       }
+     
       
       .title .fa-facebook {
         background: #3B5998;
         color: white;
       }
-
+      
       .title .fa-twitter {
         background: #55ACEE;
         color: white;
@@ -105,8 +105,8 @@
     </ul>
     
     <div class="title">   
-      <h1 href="index.html">H A Z E &nbsp W E B S I T E &nbsp D E S I G N</h1>   
-      <p>Designed For You <br> Connect </p>  
+      <h1 href="index.html" style="border-bottom: 1.0px solid white; width: 50%; margin: auto;">H A Z E &nbsp W E B S I T E &nbsp D E S I G N</h1>   
+      <p style="font-family: cursive;">Designed For You </p>  
       <a href="#" class="fa fa-facebook"></a>
       <a href="#" class="fa fa-twitter"></a>
       <a href="#" class="fa fa-google"></a>
