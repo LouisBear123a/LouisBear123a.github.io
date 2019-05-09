@@ -4,27 +4,69 @@
     <title>Haze Custom Website Design</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
       .bg {
         background-image: url("https://i.stack.imgur.com/IehB7.png"); 
         background-repeat: repeat; 
       }
-      
-      .navbar {
+      #navbar {
+        overflow: hidden;
+        background-color: #333;
+      }
+      #navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+      .nav {
+        position: fixed;
         list-style-type: none;
-        margin: 0, 50px;
+        margin: 0;
         padding: 0;
         overflow: hidden;
         background-color: #333;
         border-radius: 5px; 
+        width: 100%;
       }
-      .navbar li {
+      .nav li {
         float: left;
       }
 
-      .navbar li a {
+      .nav li a {
         display: block;
         color: white;
         text-align: center;
@@ -34,7 +76,7 @@
         transition: 0.3s;
       }
 
-      .navbar li a:hover {
+      .nav li a:hover {
         background-color: #111;
         opacity: 1; 
       }
@@ -50,20 +92,16 @@
       }
       
       .title .fa {
-        padding: 20px;
+        padding: 10px;
         font-size: 20px;
-        width: 20px;
         text-align: center;
         text-decoration: none;
-        margin: 5px 2px;
+        margin: 0px 5px;
         border-radius: 30%;
-          -webkit-transition: width 0.5s, height: 0.5s; /* For Safari 3.1 to 6.0 */
-  transition: width 0.5s, height 0.5s;
       }
 
       .title .fa:hover {
           opacity: 0.7;
-        
       }
       
       .title .fa-google {
@@ -71,7 +109,6 @@
         color: white;
       }
      
-      
       .title .fa-facebook {
         background: #3B5998;
         color: white;
@@ -91,26 +128,40 @@
         background: #430297;
         color: white;
       }
-
     </style>
   </head>
   <body class="bg">
-    <ul class="navbar">
+    <ul class="nav" id="navbar">
       <li><a href="index.html" style="opacity: 1;">Home</a><li>
       <li><a href="about.html">About</a><li>
       <li><a href="pricing.html">Pricing</a><li>
       <li><a href="donate.html">Donate</a><li>
       <li style="float: right;"><a href="signin.html">Sign-in</a><li>
     </ul>
-    
+        <script>
+          window.onscroll = function() {myFunction()};
+
+          var navbar = document.getElementById("navbar");
+          var sticky = navbar.offsetTop;
+
+          function myFunction() {
+            if (window.pageYOffset >= sticky) {
+              navbar.classList.add("sticky")
+            } else {
+              navbar.classList.remove("sticky");
+            }
+          }
+    </script>
     <div class="title">   
-      <h1 href="index.html" style="border-bottom: 1.0px solid white; width: 20%; margin: auto;">H A Z E<br> W E B S I T E S</h1>   
+      <h1 href="index.html" style="border-bottom: 1.0px solid white; width: 20%; margin: auto; padding-top: 5%;">H A Z E<br> W E B S I T E S</h1>   
       <p style="font-family: cursive;">Designed For You </p>  
-      <a href="#" class="fa fa-facebook"></a>
       <a href="#" class="fa fa-twitter"></a>
       <a href="#" class="fa fa-google"></a>
       <a href="#" class="fa fa-instagram"></a>
-      <a href="#" class="fa fa-yahoo"></a>
+    </div>
+    <div class="About" style="float: left; color: white; padding-left: 50px; padding-top: 30px; width: 200px;">
+      <h2 style="text-align: center;">About Us</h2>
+      <p style="text-align: center;  border-right: 2px solid white; border-left: 2px solid white;">We make quality custom websites for people of all skills, trades, or buisnesses. Choose from our flexible and affordable prices and packages. Thank you for choosing Haze. 
     </div>
   </body>
 </html>
